@@ -1,6 +1,6 @@
 {
-  "name": "meantodomvc",
-  "version": "0.0.0",
+  "name": "levecchiecredenze.it",
+  "version": "0.1.0",
   "dependencies": {
     "express": "~3.4.3",
     "lodash": "~2.4.1",
@@ -60,6 +60,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "start": "node server.js"
   }
 }

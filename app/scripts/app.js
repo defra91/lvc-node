@@ -1,19 +1,28 @@
 'use strict';
 
-angular.module('todomvcApp', [
+angular.module('lvc', [
   'ngResource',
   'ngRoute'
 ])
   .config(function ($routeProvider, $locationProvider) {
+
     $routeProvider
-      .when('/', {
-        templateUrl: 'partials/main',
-        controller: 'MainCtrl',
+
+      .when('/home', {
+
+        templateUrl: 'partials/home',
         reloadOnSearch: false
+
       })
+      .when('/', {
+      	redirectTo: '/home'
+      })
+
       .otherwise({
-        redirectTo: '/'
+
+        redirectTo: '/home'
+
       });
-      
+
     $locationProvider.html5Mode(true);
   });

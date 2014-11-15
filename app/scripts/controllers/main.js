@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('todomvcApp')
+angular.module('lvc')
   .controller('MainCtrl', function ($scope, $timeout, Todo, filterFilter, $location) {
     $scope.todos = [];
     $scope.newTodo = '';
