@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('controllers', []);
+angular.module('services', ['ngResource']);
+angular.module('controllers', ['services']);
+
 
 angular.module('lvc', [
   'ngResource',
@@ -21,7 +23,7 @@ angular.module('lvc', [
       	redirectTo: '/home'
       })
       .when('/gallery', {
-
+        controller: 'GalleryCtrl',
         templateUrl: 'partials/gallery',
         reloadOnSearch: false
       })
