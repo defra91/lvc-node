@@ -1,8 +1,11 @@
 'use strict';
 
+angular.module('controllers', []);
+
 angular.module('lvc', [
   'ngResource',
-  'ngRoute'
+  'ngRoute',
+  'controllers'
 ])
   .config(function ($routeProvider, $locationProvider) {
 
@@ -16,6 +19,15 @@ angular.module('lvc', [
       })
       .when('/', {
       	redirectTo: '/home'
+      })
+      .when('/gallery', {
+
+        templateUrl: 'partials/gallery',
+        reloadOnSearch: false
+      })
+      .when('/news', {
+        templateUrl: 'partials/news',
+        reloadOnSearch: false
       })
 
       .otherwise({

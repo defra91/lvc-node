@@ -25,13 +25,15 @@
     <div class="brand">Le Vecchie Credenze</div>
     <div class="address-bar">di Vittorio e Valeria</div>
 
+    <div class="container">
+
     <nav class="navbar navbar-default" role="navigation" ng-include="'partials/navbar.html'"></nav>
 
-    <div class="container">
-        <div ng-view></div>
-  	</div>
+    <div ng-view></div>
 
     <div ng-include="'partials/footer.html'"></div>
+
+    </div>
 
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -49,5 +51,18 @@
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <!-- endbuild -->
+
+    <!-- Controllers -->
+
+    <script src="scripts/controllers/NavBarCtrl.js"></script>
+
+    <script src="scripts/utils/jquery.js"></script>
+    <script src="scripts/utils/bootstrap.min.js"></script>
+
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
 </body>
 </html>
