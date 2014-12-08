@@ -18,7 +18,9 @@
     "ejs": "~0.8.4",
     "connect-mongo": "~0.4.0",
     "fs": "latest",
-    "nodemon": "1.2.1"
+    "nodemon": "1.2.1",
+    "formidable": "1.0.15",
+    "passport-local-mongoose": "1.0.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
