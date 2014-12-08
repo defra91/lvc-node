@@ -1,13 +1,24 @@
 {
-  "name": "levecchiecredenze.it",
+  "name": "lvc-node",
   "version": "0.1.0",
+  "description": "levecchiecredenze.it is a website of a famous restaurant close to Tourin, in Italy. The main goal is to provide a CMS to manage the gallery of photos and the newsletter, which can be easily handled by the manager.",
+  "contributors": [
+    {
+        "name": "Luca De Franceschi",
+        "email": "luca.defranceschi.91@gmail.com"
+    }],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:defra91/lvc-node.git"
+  },
   "dependencies": {
     "express": "~3.4.3",
     "lodash": "~2.4.1",
     "mongoose": "~3.8.8",
     "ejs": "~0.8.4",
     "connect-mongo": "~0.4.0",
-    "fs": "latest"
+    "fs": "latest",
+    "nodemon": "1.2.1"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -63,6 +74,6 @@
   },
   "scripts": {
     "test": "grunt test",
-    "start": "node server.js"
+    "start": "./node_modules/nodemon/bin/nodemon.js --debug ./server.js"
   }
 }
