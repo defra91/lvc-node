@@ -21,6 +21,9 @@ angular.module('utils')
 		};
 		
 		var handle = function(error) {
+
+			console.log(error);
+
 			var message = { type: "danger" };
 
 			if (error.status === 0) {

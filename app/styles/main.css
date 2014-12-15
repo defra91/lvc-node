@@ -194,3 +194,7 @@ footer p {
 .thumb {
     margin-bottom: 30px;
 }
+
+.alert_messages {
+    padding-top: 20px;
+}

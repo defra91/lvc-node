@@ -28,7 +28,7 @@
     <div class="container">
 
     <nav class="navbar navbar-default" role="navigation" ng-include="'partials/navbar.html'"></nav>
-
+    <div ng-include="'views/flashMessage.html'" class="alert_messages"></div>
     <div ng-view></div>
 
     <div ng-include="'partials/footer.html'"></div>
@@ -62,6 +62,7 @@
     <script src="scripts/controllers/NavBarCtrl.js"></script>
     <script src="scripts/controllers/GalleryCtrl.js"></script>
     <script src="scripts/controllers/ContactsCtrl.js"></script>
+    <script src="scripts/controllers/FlashMessageCtrl.js"></script>
 
     <!-- Utils -->
     <script src="scripts/utils/jquery.js"></script>

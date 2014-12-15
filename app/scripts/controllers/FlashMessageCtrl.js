@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('controllers')
-	.controller('FlashMessageCtrl', ['$scope', "FlashMessage",
+	.controller('FlashMessageCtrl', ['$scope', "ErrorHandler", "FlashMessage",
 
-	function ($scope, FlashMessage) {
+	function ($scope, ErrorHandler, FlashMessage) {
 		$scope.flushMessage = FlashMessage.flush;
 	}
 ]);

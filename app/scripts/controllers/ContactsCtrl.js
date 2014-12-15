@@ -15,6 +15,10 @@ angular.module('controllers')
 				}
 			);
 
+			$scope.emailError = false;
+			$scope.nameError = false;
+			$scope.surnameError = false;
+
 			$scope.newContactPage = function() {
 
 				$location.path('/admin/contacts/new');
@@ -49,7 +53,7 @@ angular.module('controllers')
 							});
 						},
 						function error(err) {
-							ErrorHandler.handle(error);
+							$scope.emailError = true;
 						}
 					);
 
