@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('controllers')
-	.controller('ContactsCtrl', ['$scope', '$routeParams', '$location', 'ContactsService', 'FlashMessage', 'ErrorHandler',
+	.controller('ContactsCtrl', ['$scope', '$routeParams', '$location', 'ContactsService', 'FlashMessage', 'ErrorHandler', 'ModalService',
 
-		function($scope, $routeParams, $location, ContactsService, FlashMessage, ErrorHandler) {
+		function($scope, $routeParams, $location, ContactsService, FlashMessage, ErrorHandler, ModalService) {
 
 			ContactsService.query(
 
@@ -15,9 +15,20 @@ angular.module('controllers')
 				}
 			);
 
-			$scope.emailError = false;
-			$scope.nameError = false;
-			$scope.surnameError = false;
+			$scope.emailError = {
+				status: false,
+				message: ""
+			};
+
+			$scope.nameError = {
+				status: false,
+				message: ""
+			};
+
+			$scope.surnameError = {
+				status: false,
+				message: ""
+			};
 
 			$scope.newContactPage = function() {
 
@@ -53,7 +64,10 @@ angular.module('controllers')
 							});
 						},
 						function error(err) {
-							$scope.emailError = true;
+							if (err.data.title === "MongoError" && err.data.code === 11000) {
+								$scope.emailError.status = true;
+								$scope.emailError.message = "Email già esistente"
+							}
 						}
 					);
 
@@ -65,5 +79,27 @@ angular.module('controllers')
 
 				$location.path('/admin/contacts');
 			};
+
+			$scope.resetFields = function() {
+
+				$scope.nameError.status = false;
+				$scope.nameError.message = "";
+
+				$scope.surnameError.status = false;
+				$scope.surnameError.message = "";
+
+				$scope.emailError.status = false;
+				$scope.emailError.message = "";
+			};
+
+			ModalService.showModal({
+				templateUrl: '../../views/contactsModal.html',
+				controller: 'ModalCtrl'
+			}).then(function(modal) {
+				modal.element.modal();
+				modal.close.then(function(result) {
+					console.log(result);
+				});
+			});
 
 		}]);

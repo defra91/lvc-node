@@ -9,7 +9,8 @@ angular.module('lvc', [
   'ngResource',
   'ngRoute',
   'controllers',
-  'utils'
+  'utils',
+  'angularModalService'
 ])
   .config(function ($routeProvider, $locationProvider) {
 
