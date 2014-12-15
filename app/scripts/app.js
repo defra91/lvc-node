@@ -31,6 +31,11 @@ angular.module('lvc', [
         templateUrl: 'partials/news',
         reloadOnSearch: false
       })
+      .when('/admin/contacts', {
+        controller: 'ContactsCtrl',
+        templateUrl: 'partials/contacts',
+        reloadOnSearch: false
+      })
 
       .otherwise({
 
