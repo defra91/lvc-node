@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('controllers')
-	.controller('ContactsCtrl', ['$scope', '$routeParams', '$location', 'ContactsService',
+	.controller('ContactsCtrl', ['$scope', '$routeParams', '$location', 'ContactsService', 'FlashMessage', 'ErrorHandler',
 
-		function($scope, $routeParams, $location, ContactsService) {
+		function($scope, $routeParams, $location, ContactsService, FlashMessage, ErrorHandler) {
 
 			ContactsService.query(
 
@@ -25,15 +25,15 @@ angular.module('controllers')
 				if ($scope.contactFormData) {
 
 					if ($scope.contactFormData.email.lenght <= 0) {
-						// TODO error
+						FlashMessage.set({type: "danger", title: "Email richiesta", message: "Devi inserire obbligatoriamente il campo email"});
 						return;
 					}
 					if ($scope.contactFormData.name.lenght <= 0) {
-						// TODO error
+						FlashMessage.set({type: "danger", title: "Nome richiesta", message: "Devi inserire obbligatoriamente il campo nome"});
 						return;
 					}
 					if ($scope.contactFormData.surname.lenght <= 0) {
-						// TODO error
+						FlashMessage.set({type: "danger", title: "Email richiesta", message: "Devi inserire obbligatoriamente il campo cognome"});
 						return;
 					}
 
@@ -42,9 +42,14 @@ angular.module('controllers')
 					newContact.$save({},
 						function success() {
 							$location.path('/admin/contacts');
+							FlashMessage.future({
+								type: 'success',
+								title: "Contatto aggiunto con successo",
+								message: "Il contatto " + $scope.contactFormData.name + " " + $scope.contactFormData.surname + " è stato aggiunto correttamente"
+							});
 						},
 						function error(err) {
-							// TODO handle error
+							ErrorHandler.handle(error);
 						}
 					);
 

@@ -2,12 +2,14 @@
 
 angular.module('services', ['ngResource']);
 angular.module('controllers', ['services']);
+angular.module('utils', ['services']);
 
 
 angular.module('lvc', [
   'ngResource',
   'ngRoute',
-  'controllers'
+  'controllers',
+  'utils'
 ])
   .config(function ($routeProvider, $locationProvider) {
 
