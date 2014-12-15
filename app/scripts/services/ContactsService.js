@@ -5,6 +5,7 @@ angular.module('services')
 
 		function($resource) {
 			return $resource('api/contacts', {}, {
-				'query': { method: 'GET', isArray: true}
+				'query': { method: 'GET', isArray: true},
+				'save': { method: 'POST'}
 			});
 		}]);
