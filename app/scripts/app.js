@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('services', ['ngResource']);
-angular.module('controllers', ['services']);
+angular.module('controllers', ['services', 'angularModalService']);
 angular.module('utils', ['services']);
 
 
@@ -10,7 +10,8 @@ angular.module('lvc', [
   'ngRoute',
   'controllers',
   'utils',
-  'angularModalService'
+  'angularModalService',
+  'ui.bootstrap'
 ])
   .config(function ($routeProvider, $locationProvider) {
 

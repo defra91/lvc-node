@@ -1,11 +1,14 @@
 'use strict';
 
 angular.module('services')
-	.factory('ContactsService', ['$resource',
+	.factory('ContactsService', ['$resource', 
 
-		function($resource) {
-			return $resource('api/contacts', {}, {
-				'query': { method: 'GET', isArray: true},
-				'save': { method: 'POST'}
+		function($resouce) {
+			return $resouce('api/contacts/:id', {}, {
+
+				'get': { method: 'GET' },
+				'remove': { method: 'DELETE' },
+				'update': { method: 'PUT' }
+
 			});
-		}]);
+}]);

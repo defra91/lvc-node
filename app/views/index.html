@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -35,17 +35,22 @@
 
     </div>
 
-    <!--[if lt IE 9]>
+    <!--[if lt IE 9]>/admin
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
     <!-- build:js(app) scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components\angular-modal-service\dst\angular-modal-service.min.js"></script
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-modal-service/dst/angular-modal-service.min.js"></script>
+    
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -53,22 +58,22 @@
     <script src="scripts/app.js"></script>
     <!-- endbuild -->
 
+
     <!-- Services -->
 
     <script src="scripts/services/GalleryService.js"></script>
     <script src="scripts/services/ContactsService.js"></script>
+    <script src="scripts/services/ContactsListService.js"></script>
 
     <!-- Controllers -->
 
+    <script src="scripts/controllers/ModalCtrl.js"></script>
     <script src="scripts/controllers/NavBarCtrl.js"></script>
     <script src="scripts/controllers/GalleryCtrl.js"></script>
     <script src="scripts/controllers/ContactsCtrl.js"></script>
     <script src="scripts/controllers/FlashMessageCtrl.js"></script>
-    <script src="scripts/controllers/ModalCtrl.js"></script>
 
     <!-- Utils -->
-    <script src="scripts/utils/jquery.js"></script>
-    <script src="scripts/utils/bootstrap.min.js"></script>
     <script src="scripts/utils/FlashMessage.js"></script>
     <script src="scripts/utils/ErrorHandler.js"></script>
 

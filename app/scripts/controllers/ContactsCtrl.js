@@ -1,19 +1,24 @@
 'use strict';
 
 angular.module('controllers')
-	.controller('ContactsCtrl', ['$scope', '$routeParams', '$location', 'ContactsService', 'FlashMessage', 'ErrorHandler', 'ModalService',
+	.controller('ContactsCtrl', ['$scope', '$routeParams', '$location', 'ContactsListService', 'ContactsService', 'FlashMessage', 'ErrorHandler', 'ModalService',
 
-		function($scope, $routeParams, $location, ContactsService, FlashMessage, ErrorHandler, ModalService) {
+		function($scope, $routeParams, $location, ContactsListService, ContactsService, FlashMessage, ErrorHandler, ModalService) {
 
-			ContactsService.query(
+			var getData = function() {
 
-				function success(data) {
-					$scope.contacts = data
-				},
-				function err(error) {
-					// TODO
-				}
-			);
+				ContactsListService.query(
+
+					function success(data) {
+						$scope.contacts = data
+					},
+					function err(error) {
+						// TODO
+					}
+				);
+			};
+
+			getData();
 
 			$scope.emailError = {
 				status: false,
@@ -52,7 +57,7 @@ angular.module('controllers')
 						return;
 					}
 
-					var newContact = new ContactsService($scope.contactFormData);
+					var newContact = new ContactsListService($scope.contactFormData);
 
 					newContact.$save({},
 						function success() {
@@ -75,6 +80,14 @@ angular.module('controllers')
 
 			};
 
+			var refresh = function() {
+				$location.search({
+					page: $scope.page
+				});
+
+				getData();
+			};
+
 			$scope.contactListPage = function() {
 
 				$location.path('/admin/contacts');
@@ -92,14 +105,33 @@ angular.module('controllers')
 				$scope.emailError.message = "";
 			};
 
-			ModalService.showModal({
-				templateUrl: '../../views/contactsModal.html',
-				controller: 'ModalCtrl'
-			}).then(function(modal) {
-				modal.element.modal();
-				modal.close.then(function(result) {
-					console.log(result);
+			$scope.deleteContact = function(user) {
+
+				ModalService.showModal({
+					templateUrl: '../../views/contactModal.html',
+					controller: 'ModalCtrl'
+				}).then(function(modal) {
+					modal.element.modal();
+					modal.close.then(function(result) {
+						if (result) {
+							ContactsService.remove({
+								id: user._id
+							},
+							function success() {
+								FlashMessage.set({ 
+									type: "success", 
+									title: "Successo!",
+									 message: "Il contatto è stato cancellato correttamente." });
+								refresh();
+							},
+							function err(error) {
+								ErrorHandler.handle(error);
+							});
+						} else {
+							console.log("No");
+						}
+					});
 				});
-			});
+			};
 
 		}]);
