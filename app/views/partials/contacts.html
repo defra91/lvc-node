@@ -1,0 +1,75 @@
+<div class="row">
+
+	<div class="box">
+		<div class="page-header">
+			<h1>Lista iscrizioni</h1>
+		</div>
+
+		<div class="span4">
+          	<label for="filterByName">Filtra per nome:</label>
+      		<input id="filterByName" type="text" placeholder="Nome" class="form-control" ng-model="nameFilter" />
+        </div>
+
+	    <div class="spacer10"></div>
+
+        <div class="span4">
+        	<label for="filterBySurname">Filtra per cognome:</label>
+        	<input type="text" id="filterBySurname" placeholder="Cognome" class="form-control" ng-model="surnameFilter" />
+    	</div>
+
+	    <div class="spacer10"></div>
+
+    	<div class="span4">
+    		<label for="filterByEmail">Filtra per email:</label>
+    		<input type="text" id="filterByEmail" placeholder="example@gmail.com" class="form-control" ng-model="emailFilter" />
+    	</div>
+
+	    <div class="spacer30"></div>
+
+		<div class="table-responsive">
+
+		<table class="table table-striped">
+
+		<thead>
+
+		<tr>
+		<th>Nome</th>
+		<th>Cognome</th>
+		<th>Email</th>
+		<th>Data di iscrizione</th>
+		<th colspan="2"></th>
+		</tr>
+
+		</thead>
+
+		<tbody>
+
+		<tr dir-paginate="contact in contacts | filter: nameFilter | filter: surnameFilter | filter: emailFilter | itemsPerPage: 10">
+
+			<td>{{ contact.name }}</td>
+			<td>{{ contact.surname }}</td>
+			<td>{{ contact.email }}</td>
+			<td>{{ contact.subscribeDate }}</td>
+			<td><a href=""><i class="fa fa-envelope-o"></i></a></td>
+			<td><a href="#" ng-click="deleteContact(contact)"><i class="fa fa-trash"></i></a></td>
+
+		</tr>
+
+
+		</tbody>
+
+		</table>
+
+		<dir-pagination-controls></dir-pagination-controls>
+
+	    <div class="spacer30"></div>
+
+		<button ng-click="newContactPage()" type="button" class="btn btn-primary">Aggiungi membro</button>
+
+
+		</div>
+
+	</div>
+
+</div>
+
