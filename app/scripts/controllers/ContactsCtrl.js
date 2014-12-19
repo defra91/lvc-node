@@ -133,5 +133,5 @@ angular.module('controllers')
 					});
 				});
 			};
-
+			
 		}]);

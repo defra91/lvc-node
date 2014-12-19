@@ -5,9 +5,26 @@
 			<h1>Lista iscrizioni</h1>
 		</div>
 
-		<p>
-		<button ng-click="newContactPage()" type="button" class="btn btn-primary">Aggiungi membro</button>
-		</p>
+		<div class="span4">
+          	<label for="filterByName">Filtra per nome:</label>
+      		<input id="filterByName" type="text" placeholder="Nome" class="form-control" ng-model="pageSize" />
+        </div>
+
+	    <div class="spacer10"></div>
+
+        <div class="span4">
+        	<label for="filterBySurname">Filtra per cognome:</label>
+        	<input type="text" id="filterBySurname" placeholder="Cognome" class="form-control" />
+    	</div>
+
+	    <div class="spacer10"></div>
+
+    	<div class="span4">
+    		<label for="filterByEmail">Filtra per email:</label>
+    		<input type="text" id="filterByEmail" placeholder="example@gmail.com" class="form-control" />
+    	</div>
+
+	    <div class="spacer30"></div>
 
 		<div class="table-responsive">
 
@@ -27,7 +44,7 @@
 
 		<tbody>
 
-		<tr ng-repeat="contact in contacts">
+		<tr dir-paginate="contact in contacts | itemsPerPage: 2">
 
 			<td>{{ contact.name }}</td>
 			<td>{{ contact.surname }}</td>
@@ -38,13 +55,21 @@
 
 		</tr>
 
+
 		</tbody>
 
-
 		</table>
+
+		<dir-pagination-controls></dir-pagination-controls>
+
+	    <div class="spacer30"></div>
+
+		<button ng-click="newContactPage()" type="button" class="btn btn-primary">Aggiungi membro</button>
+
 
 		</div>
 
 	</div>
 
 </div>
+

@@ -11,9 +11,10 @@ angular.module('lvc', [
   'controllers',
   'utils',
   'angularModalService',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'angularUtils.directives.dirPagination'
 ])
-  .config(function ($routeProvider, $locationProvider) {
+  .config(function ($routeProvider, $locationProvider, paginationTemplateProvider) {
 
     $routeProvider
 
@@ -52,4 +53,7 @@ angular.module('lvc', [
       });
 
     $locationProvider.html5Mode(true);
+
+    paginationTemplateProvider.setPath('views/dirPagination.tpl.html');
+
   });
