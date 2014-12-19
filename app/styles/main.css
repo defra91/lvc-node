@@ -211,3 +211,28 @@ footer p {
 .spacer50 { height: 50px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
 .spacer100 { height: 100px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
 .spacer200 { height: 200px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+
+.galleryItem {
+    height: 100px;
+    overflow: hidden;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    overflow: hidden;
+}
+
+ul {         
+    padding:0 0 0 0;
+    margin:0 0 0 0;
+}
+
+ul li {     
+    list-style:none;
+    margin-bottom:25px;           
+}
+
+ul li img {
+    cursor: pointer;
+}
+
+
+
