@@ -12,7 +12,11 @@
         </div>-->
         <ul class="row">
             <li ng-repeat="image in images.photos" class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-                <img class="img-responsive img-thumbnail" style="height:150px; overflow: hidden" src="../images/gallery/thumb/{{ image.filename }}">
+                <a href="../images/gallery/thumb/{{ image.filename }}" data-lightbox="roadtrip">
+
+                    <img class="img-responsive img-thumbnail" style="height:150px; overflow: hidden" src="../images/gallery/thumb/{{ image.filename }}">
+                    
+                </a>
             </li>
         </ul>
 
