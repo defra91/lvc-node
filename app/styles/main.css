@@ -109,6 +109,41 @@ footer p {
     padding: 50px 0;
 }
 
+.social-list li {
+    display: inline-block;
+    margin: 1%;
+}
+
+.social-list li a {
+    font-size: 20px;
+    line-height: 40px;
+    display: block;
+    text-align: center;
+    transition: all .15s ease-in-out;
+    color: rgba(255,255,255,.8);
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    background-size: 40px 40px;
+}
+
+a.facebook-social {
+    background: url(../images/social-icons/facebook.png);
+}
+a.twitter-social {
+    background: url(../images/social-icons/twitter.png);
+}
+a.gplus-social {
+    background: url(../images/social-icons/gplus.png);
+}
+a.tripadvisor-social {
+    background: url(../images/social-icons/tripadvisor.png);
+}
+a.linkedin-social {
+    background: url(../images/social-icons/linkedin.png);
+}
+
+
 @media screen and (min-width:768px) {
     .brand {
         display: inherit;
@@ -187,6 +222,7 @@ footer p {
         width: 100%;
         text-align: center;
     }
+
 }
 
 @media screen and (min-width:1200px) {
