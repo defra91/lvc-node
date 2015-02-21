@@ -36,6 +36,11 @@ angular.module('lvc', [
         templateUrl: 'partials/news',
         reloadOnSearch: false
       })
+      .when('/admin/login', {
+        templateUrl: 'partials/login',
+        reloadOnSearch: false,
+        controller: 'AuthCtrl'
+      })
       .when('/admin/contacts', {
         controller: 'ContactsCtrl',
         templateUrl: 'partials/contacts',
