@@ -77,6 +77,6 @@
   },
   "scripts": {
     "test": "grunt test",
-    "start": "./node_modules/nodemon/bin/nodemon.js --debug ./server.js"
+    "start": "nodemon --debug ./server.js"
   }
 }

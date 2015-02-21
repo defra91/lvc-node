@@ -78,10 +78,9 @@ hr {
 }
 
 .box {
-    margin-bottom: 20px;
-    padding: 30px 15px;
+    padding: 2%;
+    margin-bottom: 2%;
     background: #fff;
-    background: rgba(255,255,255,0.9);
 }
 
 .intro-text {
@@ -103,8 +102,6 @@ hr {
 }
 
 footer {
-    background: #fff;
-    background: rgba(255,255,255,0.9);
 }
 
 footer p {
@@ -149,6 +146,7 @@ footer p {
     }
 
     .navbar {
+        background-color: transparent;
         border-radius: 0;
     }
 
@@ -161,9 +159,8 @@ footer p {
     }
 
     .navbar-default {
-        border: none;
-        background: #fff;
-        background: rgba(255,255,255,0.9);
+        border-color: transparent !important;
+        background-color: transparent !important;
     }
 
     .nav>li>a {
@@ -172,6 +169,10 @@ footer p {
 
     .navbar-nav>li>a {
         line-height: normal;
+        font-size: 1.5em;
+    }
+    .navbar-nav > li.selected {
+        text-decoration: underline;
     }
 
     .navbar-nav {
@@ -180,6 +181,11 @@ footer p {
         margin: 0 auto;
         table-layout: fixed;
         font-size: 1.25em;
+    }
+
+    .navbar-centered {
+        width: 100%;
+        text-align: center;
     }
 }
 
