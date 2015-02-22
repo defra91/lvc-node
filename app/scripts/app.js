@@ -33,6 +33,11 @@ angular.module('lvc', [
         templateUrl: 'partials/gallery',
         reloadOnSearch: false
       })
+      .when('/menu', {
+        controller: 'MenuCtrl',
+        templateUrl: 'partials/menu.html',
+        reloadOnSearch: true
+      })
       .when('/news', {
         templateUrl: 'partials/news',
         reloadOnSearch: false
