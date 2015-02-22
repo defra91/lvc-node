@@ -1,0 +1,47 @@
+<div class="row">
+
+	<div class="box">
+
+		<div class="page-header">
+			<h1>Aggiungi un nuovo membro</h1>
+		</div>
+
+		<form role="form">
+
+			<div ng-class="{ 'form-group has-error has-feedback' : nameError.status == true, 'form-group': nameError.status == false}">
+
+				<label for="contactName">Nome</label>
+				<input ng-model="contactFormData.name" type="text" class="form-control" id="contactName" placeholder="Nome" required />
+				<span ng-show="nameError.status" class="glyphicon glyphicon-remove form-control-feedback"></span>
+				<span ng-show="nameError.status" class="help-block">{{ nameError.message }}</span>
+
+			</div>
+
+			<div ng-class="{ 'form-group has-error has-feedback' : surnameError.status == true, 'form-group': surnameError.status == false}">
+
+				<label for="contactSurname">Cognome</label>
+				<input ng-model="contactFormData.surname" type="text" class="form-control" id="contactSurname" placeholder="Cognome" required />
+				<span ng-show="surnameError.status" class="glyphicon glyphicon-remove form-control-feedback"></span>
+				<span ng-show="surnameError.status" class="help-block">{{ surnameError.message }}</span>
+
+			</div>
+
+			<div ng-class="{ 'form-group has-error has-feedback' : emailError.status == true, 'form-group': emailError.status == false}">
+
+				<label for="contactEmail">Email</label>
+				<input ng-model="contactFormData.email" type="email" class="form-control" id="contactEmail" placeholder="example@gmail.com" required />
+				<span ng-show="emailError.status" class="glyphicon glyphicon-remove form-control-feedback"></span>
+				<span ng-show="emailError.status" class="help-block">{{ emailError.message }}</span>
+
+			</div>
+
+			<div class="form-group">
+			</div>
+
+			<button type="submit" class="btn btn-primary" ng-click="createContact()">Aggiungi</button>
+			<button type="reset" class="btn btn-danger" ng-click="resetFields()">Reset</button>
+			<button type="button" class="btn btn-warning" ng-click="contactListPage()">Annulla</button>
+		</form>
+
+	</div>
+</div>

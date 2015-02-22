@@ -78,10 +78,9 @@ hr {
 }
 
 .box {
-    margin-bottom: 20px;
-    padding: 30px 15px;
+    padding: 2%;
+    margin-bottom: 2%;
     background: #fff;
-    background: rgba(255,255,255,0.9);
 }
 
 .intro-text {
@@ -103,13 +102,58 @@ hr {
 }
 
 footer {
-    background: #fff;
-    background: rgba(255,255,255,0.9);
 }
 
 footer p {
     margin: 0;
     padding: 50px 0;
+}
+
+.social-list li {
+    display: inline-block;
+    margin: 1%;
+}
+
+.social-list li a {
+    font-size: 20px;
+    line-height: 40px;
+    display: block;
+    text-align: center;
+    transition: all .15s ease-in-out;
+    color: rgba(255,255,255,.8);
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    background-size: 40px 40px;
+}
+
+div.login-container {
+    width: 100%;
+    padding: 4% 0;
+}
+
+form.form-signin input {
+    margin: 4% 0;
+}
+
+a.facebook-social {
+    background: url(../images/social-icons/facebook.png);
+}
+a.twitter-social {
+    background: url(../images/social-icons/twitter.png);
+}
+a.gplus-social {
+    background: url(../images/social-icons/gplus.png);
+}
+a.tripadvisor-social {
+    background: url(../images/social-icons/tripadvisor.png);
+}
+a.linkedin-social {
+    background: url(../images/social-icons/linkedin.png);
+}
+
+#map-canvas {
+    height: 300px;
 }
 
 @media screen and (min-width:768px) {
@@ -149,6 +193,7 @@ footer p {
     }
 
     .navbar {
+        background-color: transparent;
         border-radius: 0;
     }
 
@@ -161,9 +206,8 @@ footer p {
     }
 
     .navbar-default {
-        border: none;
-        background: #fff;
-        background: rgba(255,255,255,0.9);
+        border-color: transparent !important;
+        background-color: transparent !important;
     }
 
     .nav>li>a {
@@ -172,6 +216,10 @@ footer p {
 
     .navbar-nav>li>a {
         line-height: normal;
+        font-size: 1.5em;
+    }
+    .navbar-nav > li.selected {
+        text-decoration: underline;
     }
 
     .navbar-nav {
@@ -181,6 +229,20 @@ footer p {
         table-layout: fixed;
         font-size: 1.25em;
     }
+
+    .navbar-centered {
+        width: 100%;
+        text-align: center;
+    }
+
+    div.login-container {
+        width: 50%;
+        margin: 0 auto;
+    }
+    #map-canvas {
+        height: 500px;
+    }
+
 }
 
 @media screen and (min-width:1200px) {
@@ -194,3 +256,45 @@ footer p {
 .thumb {
     margin-bottom: 30px;
 }
+
+.alert_messages {
+    padding-top: 20px;
+}
+
+.spacer5 { height: 5px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer10 { height: 10px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer15 { height: 15px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer20 { height: 20px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer25 { height: 25px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer30 { height: 30px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer35 { height: 35px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer40 { height: 40px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer45 { height: 45px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer50 { height: 50px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer100 { height: 100px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer200 { height: 200px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+
+.galleryItem {
+    height: 100px;
+    overflow: hidden;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    overflow: hidden;
+}
+
+ul {         
+    padding:0 0 0 0;
+    margin:0 0 0 0;
+}
+
+ul li {     
+    list-style:none;
+    margin-bottom:25px;           
+}
+
+ul li img {
+    cursor: pointer;
+}
+
+
+

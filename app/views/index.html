@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -13,8 +13,11 @@
 
     <link rel="stylesheet" type="text/css" href="../styles/main.css" />
     <link rel="stylesheet" type="text/css" href="../styles/bootstrap.min.css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="../styles/lightbox.css">
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
 
   </head>
   <body ng-app="lvc">
@@ -28,23 +31,29 @@
     <div class="container">
 
     <nav class="navbar navbar-default" role="navigation" ng-include="'partials/navbar.html'"></nav>
-
+    <div ng-include="'views/flashMessage.html'" class="alert_messages"></div>
     <div ng-view></div>
 
     <div ng-include="'partials/footer.html'"></div>
-
     </div>
 
-    <!--[if lt IE 9]>
+    <!--[if lt IE 9]>/admin
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
     <!-- build:js(app) scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-modal-service/dst/angular-modal-service.min.js"></script>
+    <script src="bower_components/angular-utils-pagination/dirPagination.js"></script>
+    
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -52,18 +61,29 @@
     <script src="scripts/app.js"></script>
     <!-- endbuild -->
 
+
     <!-- Services -->
 
     <script src="scripts/services/GalleryService.js"></script>
+    <script src="scripts/services/ContactsService.js"></script>
+    <script src="scripts/services/ContactsListService.js"></script>
+    <script src="scripts/services/ProfileService.js"></script>
 
     <!-- Controllers -->
 
+    <script src="scripts/controllers/ModalCtrl.js"></script>
     <script src="scripts/controllers/NavBarCtrl.js"></script>
     <script src="scripts/controllers/GalleryCtrl.js"></script>
+    <script src="scripts/controllers/ContactsCtrl.js"></script>
+    <script src="scripts/controllers/FlashMessageCtrl.js"></script>
+    <script src="scripts/controllers/AuthCtrl.js"></script>
+    <script src="scripts/controllers/HomeCtrl.js"></script>
 
     <!-- Utils -->
-    <script src="scripts/utils/jquery.js"></script>
-    <script src="scripts/utils/bootstrap.min.js"></script>
+
+    <script src="scripts/utils/FlashMessage.js"></script>
+    <script src="scripts/utils/ErrorHandler.js"></script>
+    <script src="vendor/lightbox.min.js"></script>
 
     <script>
     $('.carousel').carousel({
