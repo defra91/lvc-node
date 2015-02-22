@@ -21,7 +21,8 @@
     "nodemon": "1.2.1",
     "formidable": "1.0.15",
     "passport-local-mongoose": "1.0.0",
-    "passport": "0.2.1"
+    "passport": "0.2.1",
+    "bower": "0.6.x"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -77,6 +78,7 @@
   },
   "scripts": {
     "test": "grunt test",
-    "start": "nodemon --debug ./server.js"
+    "start": "nodemon --debug ./server.js",
+    "postinstall": "./node_modules/bower/bin/bower install"
   }
 }
