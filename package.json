@@ -78,7 +78,6 @@
   },
   "scripts": {
     "test": "grunt test",
-    "start": "nodemon --debug ./server.js",
-    "postinstall": "bower install"
+    "start": "nodemon --debug ./server.js"
   }
 }
