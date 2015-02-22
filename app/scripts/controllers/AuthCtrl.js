@@ -2,7 +2,7 @@
 
 angular.module('controllers')
 	
-	.controller('AuthCtrl', ['$scope', '$routeParams', '$location', 'ProfileService'
+	.controller('AuthCtrl', ['$scope', '$routeParams', '$location', 'ProfileService',
 
 		function($scope, $routeParams, $location, ProfileService) {
 
@@ -18,7 +18,7 @@ angular.module('controllers')
 					var authUser = new ProfileService($scope.userFormLogin);
 					authUser.$login({},
 						function success(data) {
-							
+
 						}, function error(err) {
 							// Handle error
 						}

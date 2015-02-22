@@ -21,7 +21,8 @@ angular.module('lvc', [
       .when('/home', {
 
         templateUrl: 'partials/home',
-        reloadOnSearch: false
+        reloadOnSearch: false,
+        controller: 'HomeCtrl'
 
       })
       .when('/', {
