@@ -127,6 +127,15 @@ footer p {
     background-size: 40px 40px;
 }
 
+div.login-container {
+    width: 100%;
+    padding: 4% 0;
+}
+
+form.form-signin input {
+    margin: 4% 0;
+}
+
 a.facebook-social {
     background: url(../images/social-icons/facebook.png);
 }
@@ -221,6 +230,11 @@ a.linkedin-social {
     .navbar-centered {
         width: 100%;
         text-align: center;
+    }
+
+    div.login-container {
+        width: 50%;
+        margin: 0 auto;
     }
 
 }
