@@ -152,6 +152,9 @@ a.linkedin-social {
     background: url(../images/social-icons/linkedin.png);
 }
 
+#map-canvas {
+    height: 300px;
+}
 
 @media screen and (min-width:768px) {
     .brand {
@@ -235,6 +238,9 @@ a.linkedin-social {
     div.login-container {
         width: 50%;
         margin: 0 auto;
+    }
+    #map-canvas {
+        height: 500px;
     }
 
 }
